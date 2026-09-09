@@ -10,7 +10,7 @@ int main() {
 
 
 
-
+   country.main_switch();
 
 
 

@@ -9,20 +9,14 @@
 		using namespace std;
 		
 			class Base_class {
-				private:
-					
-					// we will force every derived class to have the following attributes
-					string cca3;
-					string country_name;
 					
 				public:
-					// every derived class will be forced to ovveride the following functions
 					
-					// the following is a public constructor to set the values of the members
-					Base_class (string cc, string name);
+					// the following are declarations for pure virtual functions to be used trhoughout the project
+					// every entity which has to display information has to override this pure virtual function
 					
-					virtual void display_information () override = 0;
-					virtual void get_population () override = 0;
+					virtual void display_details () const = 0;
+					
 					
 					virtual ~Base_class () ;
 					
