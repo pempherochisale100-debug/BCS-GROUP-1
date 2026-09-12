@@ -30,8 +30,14 @@
 					return message.c_str();
 				}
 			
-			
-			
+		try {
+			// code to be tried
+			cout << "address unknown" << *address << endl;
+		}	
+		catch ( const string excpetion& object) {
+			throw Invalid_data_entered (object);
+		}
+//			
 			
 			
 		};

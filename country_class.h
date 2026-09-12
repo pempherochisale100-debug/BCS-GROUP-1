@@ -2,10 +2,11 @@
 #define COUNTRY_CLASS_H
 
 	#include <string>
+	#include "base_class.h"
 	using namespace std;
 	
 	
-	class Country_class {
+	class Country_class : public Base_class {
 		
 		private:
 			
@@ -69,10 +70,9 @@
 		double get_growth_rate ();
 		double get_world_percentage ();
 		
-		void display_menu ();
-		void main_switch ();
 		
-		void display_country_details ();
+		
+		void display_details () override;
 		
 			
 			
