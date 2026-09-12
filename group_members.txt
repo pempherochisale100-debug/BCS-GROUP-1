@@ -1,6 +1,6 @@
 GROUP-4 MEMBERS
 ----------------------------------------------
-|	NAME	      | REGISTRATION NUMBER  |
+|	NAME	              | REGISTRATION NUMBER  |
 ----------------------------------------------
 |1. Pemphero Chisale  |   (BCS/25/SS/004)    |
 |2. Tiwonge Nyasulu   |   (BCS/25/SS/017)    |
