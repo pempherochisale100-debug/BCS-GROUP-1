@@ -11,10 +11,10 @@
 	
 	Country_class::Country_class (int rnk, string cc, string cou, string cont, long long pop_2023, long long pop_2022, long long pop_2020,
 					  long long pop_2015, long long pop_2010,long long pop_2000, long long pop_1990, long long pop_1980,
-					  long long pop_1970, double area, double density, double rate, double percentage) : rank (0), cca3 (""), 
-					  country_name (""), continent_name (""), population_2023 (0), population_2022 (0), population_2020 (0),
-					  population_2015 (0), population_2010 (0), population_2000 (0), population_1990 (0), population_1980 (0),
-					  population_1970 (0), land_area (0.0), population_density (0.0), growth_rate (0.0), world_percentage (0.0) {
+					  long long pop_1970, double area, double density, double rate, double percentage) : rank (rnk), cca3 (cc), 
+					  country_name (cou), continent_name (cont), population_2023 (pop_2023), population_2022 (pop_2022), population_2020 (pop_2020),
+					  population_2015 (pop_2015), population_2010 (pop_2010), population_2000 (pop_2000), population_1990 (pop_1990), population_1980 (pop_1980),
+					  population_1970 (pop_1970), land_area (area), population_density (density), growth_rate (rate), world_percentage (percentage) {
 					  	
 					  	
 					  }

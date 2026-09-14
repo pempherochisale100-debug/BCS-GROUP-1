@@ -22,9 +22,18 @@
 					
 				public:
 					
+					
+					// we added the following getter to get the countries to every part where we need 
+					
+					vector<Country_class>& get_countries () {
+						return country;
+					}
+					
 					Load_data () : check_loading_status (false) {
 						
 					}
+					
+					// a function to load data 
 					void load_data (const string& fileName) {
 						
 					
