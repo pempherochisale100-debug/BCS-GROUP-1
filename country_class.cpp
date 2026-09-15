@@ -204,73 +204,73 @@
 		// the following will be the im[plementation of the getter functions we have already declared 
 		
 		
-		int Country_class::get_rank () {
+		int Country_class::get_rank () const {
 				return rank;
 			
 		}
 		
-		string Country_class::get_cca3 ()  {
+		string Country_class::get_cca3 ()  const {
 			return cca3;
 		}
 		
-		string Country_class::get_name () {
+		string Country_class::get_name () const {
 			return country_name;
 		}
 		
-		string Country_class::get_continent () {
+		string Country_class::get_continent () const {
 				return continent_name;
 		}
 		
-		long long Country_class::get_population_2023 () {
+		long long Country_class::get_population_2023 () const {
 				return population_2023;
 		}
 		
-		long long Country_class::get_population_2022 () {
+		long long Country_class::get_population_2022 () const {
 				return population_2022;
 		}
 		
-		long long Country_class::get_population_2020 () {
+		long long Country_class::get_population_2020 () const {
 				return population_2020;
 		}
 		
-		long long Country_class::get_population_2015 () {
+		long long Country_class::get_population_2015 () const {
 				return population_2015;
 		}
 		
-		long long Country_class::get_population_2010 () {
+		long long Country_class::get_population_2010 () const {
 				return population_2010;
 			
 		}
 		
-		long long Country_class::get_population_2000 () {
+		long long Country_class::get_population_2000 () const {
 				return population_2000;
 		}
 		
-		long long Country_class::get_population_1990 () {
+		long long Country_class::get_population_1990 () const {
 				return population_1990;
 		}
 		
-		long long Country_class::get_population_1980 () {
+		long long Country_class::get_population_1980 () const {
 				return population_1980;
 		}
 		
-		long long Country_class::get_population_1970 () {
+		long long Country_class::get_population_1970 () const {
 				return population_1970;
 		}
 		
-		double Country_class::get_land_area () {
+		double Country_class::get_land_area () const {
 				return land_area;
 		}
 		
-		double Country_class::get_population_density () {
+		double Country_class::get_population_density () const {
 				return population_density;
 		}
 		
-		double Country_class::get_growth_rate () {
+		double Country_class::get_growth_rate () const {
 				return growth_rate;
 		}
 		
-		double Country_class::get_world_percentage () {
+		double Country_class::get_world_percentage () const {
 			return world_percentage;
 		}
 		
@@ -278,7 +278,7 @@
 		
 		
 		
-		void Country_class::display_details () {
+		void Country_class::display_details () const {
 			
 		}
 		

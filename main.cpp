@@ -1,7 +1,12 @@
 #include<iostream>
+#include <limits>
+#include<string>
+
 #include "country_class.h"
 #include "Data_manager.h"
-#include<string>
+#include "sorting_data.h"
+#include "custom_exceptions.h"
+
 
 using namespace std;
 
@@ -10,18 +15,11 @@ void display_menu ();
 
 int main() {
 
-//	Country_class country (1, "MAL", "malawi", "africa", 2345, 1234, 2345, 2345, 2345, 234, 2345,876, 12345, 234, 2345, 0.34, 234);
-//	country.main_switch();
 
-
-
-Base_class* ptr  = new Load_data;
-
-//ptr = &Load_data;
-
-//ptr->display_details();
-
-ptr->display_details();	
+	Load_data loader;
+	
+	loader.load_data ("world_population_data.csv");
+	loader.display_details();
 	
 	bool loop_controller = true;
 	
@@ -52,6 +50,11 @@ ptr->display_details();
 					}
 					case 4:{
 						//sort countries
+						
+						Sort_engine sorting (loader.get_countries());
+						
+						sorting.run_sort_menu();
+						
 						break;
 					}
 					case 5:{
@@ -131,22 +134,22 @@ ptr->display_details();
 
 	
 		void display_menu () {
-			cout<<"----MAIN MENU----"<<endl;
-			cout<<" 1. Load CSV Data  "<<endl;
-			cout<<" 2. Display Nmumber of Countries "<<endl;
-			cout<<" 3. Search Countries \n";
-			cout<<" 4. Sort Countries \n";
-			cout<<" 5. Find maximu /minimum values \n";
-			cout<<" 6. Filter countries \n";
-			cout<<" 7. Statistical Analysis \n";
-			cout<<" 8. Density Classification\n";
-			cout<<" 9. Analyses by continent \n";
-			cout<<"10. Population Trend Analysis \n";
-			cout<<"11. Estimate Future Population \n";
-			cout<<"12. Compare Countries \n";
-			cout<<"13. Export High-Population Countries \n";
-			cout<<"14. Generate Report \n";
-			cout<<" 0. Exit \n ";
+			cout <<"----MAIN MENU----"<<endl;
+			cout <<" 1. Load CSV Data  "<<endl;
+			cout <<" 2. Display Nmumber of Countries "<<endl;
+			cout <<" 3. Search Countries \n";
+			cout <<" 4. Sort Countries \n";
+			cout <<" 5. Find maximu /minimum values \n";
+			cout <<" 6. Filter countries \n";
+			cout <<" 7. Statistical Analysis \n";
+			cout <<" 8. Density Classification\n";
+			cout <<" 9. Analyses by continent \n";
+			cout <<"10. Population Trend Analysis \n";
+			cout <<"11. Estimate Future Population \n";
+			cout <<"12. Compare Countries \n";
+			cout <<"13. Export High-Population Countries \n";
+			cout <<"14. Generate Report \n";
+			cout <<" 0. Exit \n ";
 			
 		}
 		

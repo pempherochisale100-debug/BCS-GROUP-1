@@ -52,27 +52,27 @@
 		
 		// the following definitions are of getters of these set private member attributes
 		
-		int  get_rank ();
-		string get_cca3 () ;
-		string get_name ();
-		string get_continent ();
-		long long get_population_2023 ();
-		long long get_population_2022 ();
-		long long get_population_2020 ();
-		long long get_population_2015 ();
-		long long get_population_2010 ();
-		long long get_population_2000 ();
-		long long get_population_1990 ();
-		long long get_population_1980 ();
-		long long get_population_1970 ();
-		double get_land_area ();
-		double get_population_density ();
-		double get_growth_rate ();
-		double get_world_percentage ();
+		int  get_rank () const ;
+		string get_cca3 () const ;
+		string get_name () const;
+		string get_continent () const;
+		long long get_population_2023 () const;
+		long long get_population_2022 () const;
+		long long get_population_2020 () const;
+		long long get_population_2015 () const;
+		long long get_population_2010 () const;
+		long long get_population_2000 () const;
+		long long get_population_1990 () const;
+		long long get_population_1980 () const;
+		long long get_population_1970 () const;
+		double get_land_area () const;
+		double get_population_density () const;
+		double get_growth_rate () const;
+		double get_world_percentage () const;
 		
 		
 		
-		void display_details () override;
+		void display_details () const override;
 		
 			
 			

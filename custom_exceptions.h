@@ -23,20 +23,18 @@
 			public:
 				
 				Invalid_data_entered (const string& msg) : message (msg) {
+					
 					message = "Data you entered is Invalid \n";
+					
 				}
 				
 				const char* what () const noexcept override {
+					
 					return message.c_str();
+					
 				}
 			
-		try {
-			// code to be tried
-			cout << "address unknown" << *address << endl;
-		}	
-		catch ( const string excpetion& object) {
-			throw Invalid_data_entered (object);
-		}
+		
 //			
 			
 			
@@ -46,16 +44,21 @@
 		class Country_not_found : public exception  {
 			
 			private:
+				
 				string message;
 				
 			public:
 				
 				Country_not_found (const string& text) {
+					
 					message = "Country not found!!!! \n";
+					
 				}	
 				
 				const char* what () const noexcept override {
+					
 					return message.c_str ();
+					
 				}
 		};	
 			
@@ -65,39 +68,5 @@
 			
 			
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 #endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
