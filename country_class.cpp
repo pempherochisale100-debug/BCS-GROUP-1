@@ -209,11 +209,11 @@
 			
 		}
 		
-		string Country_class::get_cca3 ()  const {
+		string Country_class::get_cca3 () const{
 			return cca3;
 		}
 		
-		string Country_class::get_name () const {
+		string Country_class::get_name () const{
 			return country_name;
 		}
 		

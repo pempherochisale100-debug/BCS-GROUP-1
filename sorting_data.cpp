@@ -284,7 +284,7 @@ void Sort_engine::sort_by_population_density () const {
 	}
 	);
 
-	display_sorted_list (sort_by_density, "Density (Descending)", "population density", 2);
+	display_sorted_list (sort_by_density, "Density (Descending)", "population Density", 2);
 }
 
 // Sort: growth rate (ascending)

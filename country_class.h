@@ -53,7 +53,7 @@
 		// the following definitions are of getters of these set private member attributes
 		
 		int  get_rank () const ;
-		string get_cca3 () const ;
+		string get_cca3 () const;
 		string get_name () const;
 		string get_continent () const;
 		long long get_population_2023 () const;
