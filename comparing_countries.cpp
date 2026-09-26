@@ -93,62 +93,36 @@
 	// the following function will compare the countries in different fields 
 	void Comparing_countries::display_compared_results (const Country_class& country_a, const Country_class& country_b) const {
 		
-	cout << "\n------------------------------------------------------------------------------" << endl;
+	cout << "--------------------------------------------------------------------------------" << endl;
 	cout << "                              COUNTRY COMPARISON                                " << endl;
 	cout << "--------------------------------------------------------------------------------" << endl;
 	
 	
 	// header row: names
-	cout << left
-	     << setw(28) << ""
-	     << setw(24) << country_a.get_name()
-	     << setw(24) << country_b.get_name()
-	     << endl;
+	cout << left << setw(28) << "" << setw(24) << country_a.get_name() << setw(24) << country_b.get_name() << endl;
 	
-	cout << left
-	     << setw(28) << ""
-	     << setw(24) << ("(" + country_a.get_cca3() + ")")
-	     << setw(24) << ("(" + country_b.get_cca3() + ")")
-	     << endl;
+	cout << left << setw(28) << "" << setw(24) << ("(" + country_a.get_cca3() + ")") << setw(24) << ("(" + country_b.get_cca3() + ")") << endl;
 	
 	cout << "--------------------------------------------------------------------------------" << endl;
 	
 	
-	// Continent
-	cout << left << setw(28) << "Continent"
-	     << setw(24) << country_a.get_continent()
-	     << setw(24) << country_b.get_continent()
-	     << endl;
+	// this line of code will display the continent names in which the countries the user entered belong
+	cout << left << setw(28) << "Continent" << setw(24) << country_a.get_continent() << setw(24) << country_b.get_continent()  << endl;
 	
-	// 2023 Population
-	cout << left << setw(28) << "2023 Population"
-	     << setw(24) << country_a.get_population_2023()
-	     << setw(24) << country_b.get_population_2023()
-	     << endl;
+	// this line of code will display the 2023 population of the countries under study
+	cout << left << setw(28) << "2023 Population" << setw(24) << country_a.get_population_2023() << setw(24) << country_b.get_population_2023() << endl;
 	
-	// Land Area
-	cout << left << setw(28) << "Land Area (km2)"
-	     << setw(24) << fixed << setprecision(2) << country_a.get_land_area()
-	     << setw(24) << fixed << setprecision(2) << country_b.get_land_area()
-	     << endl;
+	// this line of code will display the land area of each of the selected countries 
+	cout << left << setw(28) << "Land Area (km2)" << setw(24) << fixed << setprecision(2) << country_a.get_land_area() << setw(24) << fixed << setprecision(2) << country_b.get_land_area() << endl;
 	
-	// Population Density
-	cout << left << setw(28) << "Population Density"
-	     << setw(24) << fixed << setprecision(2) << country_a.get_population_density()
-	     << setw(24) << fixed << setprecision(2) << country_b.get_population_density()
-	     << endl;
+	// this line of code will display the  Population Density of each of the countries under study 
+	cout << left << setw(28) << "Population Density" << setw(24) << fixed << setprecision(2) << country_a.get_population_density() << setw(24) << fixed << setprecision(2) << country_b.get_population_density() << endl;
 	
-	// Growth Rate
-	cout << left << setw(28) << "Growth Rate (%)"
-	     << setw(24) << fixed << setprecision(2) << country_a.get_growth_rate()
-	     << setw(24) << fixed << setprecision(2) << country_b.get_growth_rate()
-	     << endl;
+	// this line will also diaply the growth of each of the countries under comparison
+	cout << left << setw(28) << "Growth Rate (%)" << setw(24) << fixed << setprecision(2) << country_a.get_growth_rate() << setw(24) << fixed << setprecision(2) << country_b.get_growth_rate()  << endl;
 	
-	// World Percentage
-	cout << left << setw(28) << "World Percentage (%)"
-	     << setw(24) << fixed << setprecision(2) << country_a.get_world_percentage()
-	     << setw(24) << fixed << setprecision(2) << country_b.get_world_percentage()
-	     << endl;
+	// this line will didplay the world [ercentage contribution of each of the countries under study
+	cout << left << setw(28) << "World Percentage (%)" << setw(24) << fixed << setprecision(2) << country_a.get_world_percentage() << setw(24) << fixed << setprecision(2) << country_b.get_world_percentage() << endl;
 	     
 	
 	cout << "\n------------------------------------------------------------------------------------\n" << endl;
@@ -156,11 +130,6 @@
 	
 	}
 
-
-	
-	
-	
-	
 	// this function will have a menu fo the user to select options from there
 	void Comparing_countries::display_compare_countries_menu () const {
 		
@@ -182,7 +151,7 @@
 		do {
 			
 			display_compare_countries_menu ();
-			
+			// checking the user input before handling the data whether it is of string data type because we would our type to be an integer
 				if (!(cin>>choice)) {
 					cin.clear();
 					cerr << "\nERROR: Invalid input entered \n";
@@ -196,9 +165,10 @@
 						switch (choice) {
 							case 1: {
 								// this will control everything here 
-								
+								// variables to store the inpput entered by the user
 								string first_country, second_country;
 								
+									// getting the user input using getline *() method
 									cout << "Enter name or cca3 of the first country to compare: ";
 										getline (cin, first_country);
 									
@@ -206,6 +176,12 @@
 									cout << "Enter name or cca3 of the second country to compare: ";
 									getline (cin, second_country);
 									
+									// i can check whether the data entered is valid or is empty using  the empty () method 
+									
+										if (first_country.empty() && second_country.empty()){
+											throw Invalid_data_entered ("ERROR: You must enter the names of the countries to proceed with the comaprison");	
+										}	
+																		
 									compare_countries (first_country, second_country);
 								
 								break;
@@ -243,5 +219,6 @@
 		
 	}
 	
+
 
 

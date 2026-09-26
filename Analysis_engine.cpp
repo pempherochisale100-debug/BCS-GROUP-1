@@ -50,13 +50,17 @@ void AnalysisEngine::classifyDensity() const{
 	int mediumCount = 0;
 	int highCount =0;
 	
+	if (countries.empty()) {
+		throw Invalid_data_entered ("ERROR: This object has no data");
+	}
+	
 	// use for loop  to look  at every single country in our vector one by one
 	 for (int i= 0; i < countries.size(); i++){
 	 	
-	 	double density= countries[i].get_population_density();
+	 	double density = countries[i].get_population_density();
 	 	
 	 	// check all  conditions given
-	 	if (density<100){
+	 	if (density < 100){
 	 		lowCount++;
 	 	
 		 }
@@ -73,11 +77,11 @@ void AnalysisEngine::classifyDensity() const{
 	 
 	 cout<<"\n==================Density Classfiaction=============="<<endl;
 	 
-	 cout << "low(under 100)      : " << lowCount << " countries " << endl;
-	 cout << "Medium(100-499)     : " << mediumCount << "countries" << endl;
-	 cout << "High(500 and above) : " << highCount << "countries" << endl;
+	 cout << "low(under 100)      : " << lowCount    << " countries " << endl;
+	 cout << "Medium(100-499)     : " << mediumCount << " countries" << endl;
+	 cout << "High(500 and above) : " << highCount   << " countries" << endl;
 	 
-	 cout<<"\n ====================================================="<<endl;
+	 cout<<"======================================================"<<endl;
 	 
 	 }
 	 
@@ -86,33 +90,33 @@ void AnalysisEngine::classifyDensity() const{
 	 void AnalysisEngine::analysePopulationGrowth() const{
 	 	
 	 	//make sure the data exist
-	 	if(countries.size()==0){
+	 	if(countries.size() == 0){
 	 		cout<<"No data loaded"<<endl;
 	 		return;
 		 }
 		 
-		 string largestAbsName=countries[0].get_name();
-		 long long largestAbsChange=countries[0].get_population_2023()-countries[0].get_population_1970();
+		 string largestAbsName = countries[0].get_name();
+		 long long largestAbsChange = countries[0].get_population_2023() - countries[0].get_population_1970();
 		 
-		 string smallestAbsName=countries[0].get_name();
-		 long long smallestAbsChange=countries[0].get_population_2023()-countries[0].get_population_1970();
+		 string smallestAbsName = countries[0].get_name();
+		 long long smallestAbsChange = countries[0].get_population_2023() - countries[0].get_population_1970();
 		 
-		 string largestPercName=countries[0].get_name();
-		 double largestPercChange=0;
+		 string largestPercName = countries[0].get_name();
+		 double largestPercChange = 0;
 		 
 		 // loop from all countries starting  from second one
-		 for (int i=1;i<countries.size();i++){
-		 	long long pop1970=countries[i].get_population_1970();
-		 	long long pop2023=countries[i].get_population_2023();
+		 for (int i = 1; i < countries.size(); i++){
+		 	long long pop1970 = countries[i].get_population_1970();
+		 	long long pop2023 = countries[i].get_population_2023();
 		 
 		 
 		 // claculate absolute and percentage change for current countries
-		 long long absoluteChange=pop1970-pop2023;
+		 long long absoluteChange = pop1970 - pop2023;
 		 
-		 double percentageChange=0.0;
-		 if(pop1970>0){
+		 double percentageChange = 0.0;
+		 if(pop1970 > 0){
 		 
-		  percentageChange=((double)absoluteChange/pop1970)*100;
+		  percentageChange = ((double)absoluteChange/pop1970)* 100;
 		 
 		 }
 		 
@@ -121,26 +125,26 @@ void AnalysisEngine::classifyDensity() const{
 		 
 		 
 		 	largestAbsChange=absoluteChange;
-		 	largestAbsName= countries[i].get_name();
+		 	largestAbsName = countries[i].get_name();
 		 }
 		 
 		 // check smallest absolute increases
-		  if(absoluteChange <smallestAbsChange){
+		  if(absoluteChange < smallestAbsChange){
 		  	
-		  	smallestAbsChange=absoluteChange;
-		  	smallestAbsName=countries[i].get_name();
+		  	smallestAbsChange = absoluteChange;
+		  	smallestAbsName = countries[i].get_name();
 		  }
 		  	
 			  
 			  //check largest percentage increase
 			  if (i==1){
-			  	largestPercChange=percentageChange;
+			  	largestPercChange = percentageChange;
 			  }
 			  
 			  if(percentageChange > largestPercChange)
 			  
-			  	largestPercChange=percentageChange;
-			  	largestPercName=countries[i].get_name();
+			  	largestPercChange = percentageChange;
+			  	largestPercName = countries[i].get_name();
 			  }
 			  
 			  // print results

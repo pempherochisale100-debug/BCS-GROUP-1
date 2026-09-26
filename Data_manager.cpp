@@ -14,7 +14,7 @@ Load_data::Load_data () : check_loading_status (false) {
 	
 }
 
-// Getter â€” return the internal vector
+// Getter — return the internal vector
 const vector<Country_class>& Load_data::get_countries () const {
 	
  	return country;
@@ -39,6 +39,7 @@ void Load_data::load_data (const string& fileName){
 		cerr << "ERROR: Failed to open the file " << fileName << endl;
 		return;
 	}
+	
 
 	string line;
 	int line_count = 0;
@@ -53,7 +54,7 @@ void Load_data::load_data (const string& fileName){
 		if (line.empty()) {
 			continue;
 		}
-
+		
 		vector<string> individual_fields;
 		stringstream ss (line);
 		string field;

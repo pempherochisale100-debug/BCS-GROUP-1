@@ -16,27 +16,12 @@
 					// every entity which has to display information has to override this pure virtual function
 					
 					virtual void display_details () const = 0;
-					
-					
-					
-				
 				
 				     virtual ~Base_class () {
 					 
 					 }
 					
-					
-					
-					
-					
 			};
-		
-		
-		
-		
-		
-		
-		
 		
 		
 #endif

@@ -150,6 +150,7 @@ void Sort_engine::display_sorted_list (const vector<Country_class>& sorted_count
 	     << setw(35) << "Country"
 	     << setw(20) << "Continent"
 	     << setw(20) << column_label << endl;
+	cout << "-------------------------------------------------------------------------------------------------\n" << endl;
 
 // here i will use size_t for the loop counter variable becaus it is a special datatype associated with vectors
 	for (size_t i = 0; i < sorted_countries.size(); i++) {
