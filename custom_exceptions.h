@@ -24,7 +24,6 @@
 				
 				Invalid_data_entered (const string& msg) : message (msg) {
 					
-					message = "Data you entered is Invalid \n";
 					
 				}
 				
@@ -49,9 +48,7 @@
 				
 			public:
 				
-				Country_not_found (const string& text) {
-					
-					message = "Country not found!!!! \n";
+				Country_not_found (const string& text) : message (text) {
 					
 				}	
 				

@@ -32,11 +32,11 @@
 		const Country_class* second_country = search_a_country (country_b);
 		
 		if (first_country == nullptr) {
-			throw Invalid_data_entered ("This pointer currently has no active data");
+			throw Country_not_found (country_a);
 		}
 		
 		if (second_country == nullptr ) {
-			throw Invalid_data_entered ("this pointer currently has no active data ");
+			throw Country_not_found (country_b);
 		}
 		
 		display_compared_results (*first_country, *second_country );

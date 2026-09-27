@@ -1,6 +1,7 @@
 #include "Analysis_engine.h"
 #include <iomanip>
 #include "custom_exceptions.h"
+#include "Data_manager.h"
 
 AnalysisEngine::AnalysisEngine(vector<Country_class>data){
 	// save the data into our private variable
@@ -88,78 +89,55 @@ void AnalysisEngine::classifyDensity() const{
 	 
 	 //===== ANALYSE POPULATION GROWTH======//
 	  
-	 void AnalysisEngine::analysePopulationGrowth() const{
-	 	
-	 	//make sure the data exist
-	 	if(countries.size() == 0){
-	 		cout<<"No data loaded"<<endl;
-	 		return;
-		 }
-		 
-		 string largestAbsName = countries[0].get_name();
-		 long long largestAbsChange = countries[0].get_population_2023() - countries[0].get_population_1970();
-		 
-		 string smallestAbsName = countries[0].get_name();
-		 long long smallestAbsChange = countries[0].get_population_2023() - countries[0].get_population_1970();
-		 
-		 string largestPercName = countries[0].get_name();
-		 double largestPercChange = 0;
-		 
-		 // loop from all countries starting  from second one
-		 for (int i = 1; i < countries.size(); i++){
-		 	long long pop1970 = countries[i].get_population_1970();
-		 	long long pop2023 = countries[i].get_population_2023();
-		 
-		 
-		 // claculate absolute and percentage change for current countries
-		 long long absoluteChange = pop1970 - pop2023;
-		 
-		 double percentageChange = 0.0;
-		 if(pop1970 > 0){
-		 
-		  percentageChange = ((double)absoluteChange/pop1970)* 100;
-		 
-		 }
-		 
-		 // check largest absolute increase
-		 if(absoluteChange > largestAbsChange){
-		 
-		 
-		 	largestAbsChange=absoluteChange;
-		 	largestAbsName = countries[i].get_name();
-		 }
-		 
-		 // check smallest absolute increases
-		  if(absoluteChange < smallestAbsChange){
-		  	
-		  	smallestAbsChange = absoluteChange;
-		  	smallestAbsName = countries[i].get_name();
-		  }
-		  	
-			  
-			  //check largest percentage increase
-			  if (i==1){
-			  	largestPercChange = percentageChange;
-			  }
-			  
-			  if(percentageChange > largestPercChange)
-			  
-			  	largestPercChange = percentageChange;
-			  	largestPercName = countries[i].get_name();
-			  }
-			  
-			  // print results
-			  cout<<"\n============================Global population Growth(1970 t0 2023)==========================="<<endl;
-			  cout << "Largest absolute increase        : " << largestAbsName << " + " << largestAbsChange << "people" << endl;
-			  cout << "Smallest absolute increase       : " << smallestAbsName << " + " << smallestAbsChange << "people" << endl;
-			  cout << "Largest percentage increase      : " << largestPercName << " + " << largestPercChange << "%" << endl;
-			  
-			  }
-	 
-	 
-	 void AnalysisEngine::display_details()const{
-	 	cout<<"analysis engine is ready"<<endl;
-	 }
-	 
-	 
-	 
+	 void AnalysisEngine::analysePopulationGrowth() const {
+
+    if (countries.size() == 0){
+        cout << "No data loaded\n";
+        return;
+    }
+
+    string largestAbsName   = countries[0].get_name();
+    long long largestAbsChange = countries[0].get_population_2023() - countries[0].get_population_1970();
+
+    string smallestAbsName  = countries[0].get_name();
+    long long smallestAbsChange = largestAbsChange;  // start with same value
+
+    string largestPercName  = countries[0].get_name();
+    double largestPercChange = 0.0;
+
+    for (size_t i = 0; i < countries.size(); i++) {
+        long long pop1970 = countries[i].get_population_1970();
+        long long pop2023 = countries[i].get_population_2023();
+
+        long long absoluteChange = pop2023 - pop1970;   // ? correct direction
+
+        double percentageChange = 0.0;
+        if (pop1970 > 0) {
+            percentageChange = ((double)absoluteChange / pop1970) * 100.0;
+        }
+
+        if (absoluteChange > largestAbsChange) {
+            largestAbsChange = absoluteChange;
+            largestAbsName   = countries[i].get_name();
+        }
+        if (absoluteChange < smallestAbsChange) {
+            smallestAbsChange = absoluteChange;
+            smallestAbsName   = countries[i].get_name();
+        }
+        if (percentageChange > largestPercChange) {   // ? braces
+            largestPercChange = percentageChange;
+            largestPercName   = countries[i].get_name();
+        }
+    }
+
+    cout << "\n=========== Global Population Growth (1970 to 2023) ===========\n";
+    cout << "Largest absolute increase   : " << largestAbsName  << " +" << largestAbsChange  << " people\n";
+    cout << "Smallest absolute increase  : " << smallestAbsName << " "  << smallestAbsChange << " people\n";
+    cout << "Largest percentage increase : " << largestPercName << " +" << fixed << setprecision(2) << largestPercChange << "%\n";
+}
+
+void AnalysisEngine::display_details () const {
+	//int country_number = get_countries_count ();
+	cout << "Filtering operation have been done on " << countries.size() <<  endl;
+	//cout << "End it \n";
+}

@@ -6,6 +6,7 @@
 #include <string>
 #include "country_class.h"
 #include "base_class.h"
+#include "Data_manager.h"
 
 using namespace std;
 class AnalysisEngine : public Base_class {

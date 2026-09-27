@@ -1,6 +1,7 @@
 
 
 #include "search_engine.h"
+#include "custom_exceptions.h"
 #include "base_class.h"
 #include "country_class.h"
 #include "Data_manager.h"
@@ -75,6 +76,11 @@ using namespace std;
 		 			
 		 			
 				 }
+				 
+				 if (!found) {
+				    cout << "ERROR: Country \"" << name << "\" was not found.\n";
+				    return;
+				}
 		 		
 			 }
 		 	

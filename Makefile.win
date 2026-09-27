@@ -1,0 +1,67 @@
+# Project: WPDAS
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o country_class.o Data_manager.o population_systems.o statistical_measures.o sorting_data.o search_engine.o future_estimation.o extreme_value_countries.o exporting_highly_pop_countries.o comparing_countries.o Analysis_engine.o continent_analysis.o report_generator.o
+LINKOBJ  = main.o country_class.o Data_manager.o population_systems.o statistical_measures.o sorting_data.o search_engine.o future_estimation.o extreme_value_countries.o exporting_highly_pop_countries.o comparing_countries.o Analysis_engine.o continent_analysis.o report_generator.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = WPDAS.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+country_class.o: country_class.cpp
+	$(CPP) -c country_class.cpp -o country_class.o $(CXXFLAGS)
+
+Data_manager.o: Data_manager.cpp
+	$(CPP) -c Data_manager.cpp -o Data_manager.o $(CXXFLAGS)
+
+population_systems.o: population_systems.cpp
+	$(CPP) -c population_systems.cpp -o population_systems.o $(CXXFLAGS)
+
+statistical_measures.o: statistical_measures.cpp
+	$(CPP) -c statistical_measures.cpp -o statistical_measures.o $(CXXFLAGS)
+
+sorting_data.o: sorting_data.cpp
+	$(CPP) -c sorting_data.cpp -o sorting_data.o $(CXXFLAGS)
+
+search_engine.o: search_engine.cpp
+	$(CPP) -c search_engine.cpp -o search_engine.o $(CXXFLAGS)
+
+future_estimation.o: future_estimation.cpp
+	$(CPP) -c future_estimation.cpp -o future_estimation.o $(CXXFLAGS)
+
+extreme_value_countries.o: extreme_value_countries.cpp
+	$(CPP) -c extreme_value_countries.cpp -o extreme_value_countries.o $(CXXFLAGS)
+
+exporting_highly_pop_countries.o: exporting_highly_pop_countries.cpp
+	$(CPP) -c exporting_highly_pop_countries.cpp -o exporting_highly_pop_countries.o $(CXXFLAGS)
+
+comparing_countries.o: comparing_countries.cpp
+	$(CPP) -c comparing_countries.cpp -o comparing_countries.o $(CXXFLAGS)
+
+Analysis_engine.o: Analysis_engine.cpp
+	$(CPP) -c Analysis_engine.cpp -o Analysis_engine.o $(CXXFLAGS)
+
+continent_analysis.o: continent_analysis.cpp
+	$(CPP) -c continent_analysis.cpp -o continent_analysis.o $(CXXFLAGS)
+
+report_generator.o: report_generator.cpp
+	$(CPP) -c report_generator.cpp -o report_generator.o $(CXXFLAGS)

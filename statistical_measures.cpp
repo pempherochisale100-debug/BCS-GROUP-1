@@ -31,7 +31,7 @@ void statistical_measures::display_statistical_menu(){
 	
 	cout<<"-------------------------------------------------------------------------------------------------------\n";
 	
-	cout<<"\n";
+	//cout<<"\n";
 	
 	cout<<"1. Mean \n";
 	
@@ -48,14 +48,6 @@ void statistical_measures::display_statistical_menu(){
 
 void statistical_measures::display_mean_menu(){
 	
-		   	cout << "====================================================================\n";
-	   		cout << "                               MEAN MEASURES                         \n";
-	   		cout << "====================================================================\n";
-	   		
-	   			cout << "1. mean for 2023 population \n ";
-	   			cout << "2. mean for population density \n ";
-	   			cout << "3. mean for growth rate  \n";
-	   			cout << "0. Exit the program \n";
 }
 
 void statistical_measures ::run_mean_menu(){
@@ -64,7 +56,16 @@ void statistical_measures ::run_mean_menu(){
 			
 			do {
 				// calling the function which has our display menu \
-				display_mean_menu ();
+				//display_mean_menu ();
+				
+		   	cout << "====================================================================\n";
+	   		cout << "                               MEAN MEASURES                         \n";
+	   		cout << "====================================================================\n";
+	   		
+	   			cout << "1. mean for 2023 population \n ";
+	   			cout << "2. mean for population density \n ";
+	   			cout << "3. mean for growth rate  \n";
+	   			cout << "0. Exit the program \n";
 				
 				cout << "Enter a choice (0-3): ";
 					if (!(cin>>choice)) {
@@ -117,7 +118,7 @@ void statistical_measures ::run_mean_menu(){
 					
 				}
 				catch (const exception& e) {
-					throw Invalid_data_entered ("The data you entered is invalid");
+					cout << "ERROR: " << e.what () << endl;
 				}
 				
 				if (choice != 0) {
@@ -176,6 +177,15 @@ double statistical_measures::growth_rate_mean(){
 
 void statistical_measures::display_median_menu(){
 	
+}
+void statistical_measures ::run_median_menu(){
+		
+			int choice=-1;
+			
+			do {
+				// calling the function which has our display menu \
+				//display_median_menu ();
+				
 		   	cout << "====================================================================\n";
 	   		cout << "                               MEAN MEASURES                         \n";
 	   		cout << "====================================================================\n";
@@ -184,14 +194,6 @@ void statistical_measures::display_median_menu(){
 	   			cout << "2. median for growth rate \n ";
 	   			cout << "3. median for density  \n";
 	   			cout << "0. Exit the program \n";
-}
-void statistical_measures ::run_median_menu(){
-		
-			int choice=-1;
-			
-			do {
-				// calling the function which has our display menu \
-				display_median_menu ();
 				
 				cout << "Enter a choice (0-3): ";
 					if (!(cin>>choice)) {
@@ -244,7 +246,7 @@ void statistical_measures ::run_median_menu(){
 					
 				}
 				catch (const exception& e) {
-					throw Invalid_data_entered ("The data you entered is invalid");
+					cout << "ERROR: " << e.what () << endl;
 				}
 				
 				if (choice != 0) {
@@ -435,7 +437,7 @@ double statistical_measures::density_median(){
 					
 				}
 				catch (const exception& e) {
-					throw Invalid_data_entered ("The data you entered is invalid");
+					cout << "ERROR: " << e.what () << endl;
 				}
 				
 				if (choice != 0) {
@@ -459,6 +461,7 @@ double statistical_measures::density_median(){
  			max_pop = countries [i];
 		 }
 	 }
+	 
 	   	help_display_result (max_pop , true , "maximum 1970 population " );
 	   	
 	   	return max_pop.get_population_1970();
@@ -473,10 +476,10 @@ double statistical_measures::density_median(){
  		if (countries[i].get_population_1970 () < min_pop.get_population_1970 ()) {
  			min_pop = countries [i];
 		 }
-	   	help_display_result (min_pop , false , "minimum 1970 population " );
+	   	
 	 }
 	 
-	 
+	 	help_display_result (min_pop , false , "minimum 1970 population " );
 	   	
 	   	return min_pop.get_population_1970();
  }
@@ -670,7 +673,7 @@ double statistical_measures::density_median(){
 					
 				}
 				catch (const exception& e) {
-					throw Invalid_data_entered ("The data you entered is invalid");
+					cout << "ERROR: " << e.what () << endl;
 				}
 				
 				if (choice != 0) {
@@ -705,15 +708,15 @@ double statistical_measures::density_median(){
 			
 			do {
 				// calling the function which has our display menu \
-				display_statistical_menu();
-					
+				//display_statistical_menu();
+				
 	cout<<"------------------------------------------------------------------------------------------------------\n";
 	
 	cout<<"---------------------------------STATISTICAL MEASURES  ------------------------------------------\n";
 	
 	cout<<"-------------------------------------------------------------------------------------------------------\n";
 	
-	cout<<"\n";
+	//cout<<"\n";
 	
 	cout<<"1. Mean \n";
 	
@@ -726,6 +729,7 @@ double statistical_measures::density_median(){
 	cout<<"5. minimum \n ";
 	
 	cout<<"6. standard deviation \n";
+					
 
 				
 				cout << "Enter a choice (0-6): ";
@@ -793,7 +797,7 @@ double statistical_measures::density_median(){
 					
 				}
 				catch (const exception& e) {
-					throw Invalid_data_entered ("The data you entered is invalid");
+					cout << "ERROR: " << e.what () << endl;
 				}
 				
 				if (choice != 0) {

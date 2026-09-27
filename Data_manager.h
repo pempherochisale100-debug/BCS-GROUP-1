@@ -23,6 +23,16 @@
 					
 					bool check_loading_status = true;
 					
+					// to trim the percentage symbol in the fields like growth rate and population percentage 
+					// i will use a helper function which will a static double 
+					static double trim_percent_symbol(string s) {
+					    while (!s.empty() && (s.back() == '%' || s.back() == ' ' || s.back() == '\r'))
+					        s.pop_back();
+					    return stod(s);
+					}
+					
+					
+					
 				public:
 					
 					

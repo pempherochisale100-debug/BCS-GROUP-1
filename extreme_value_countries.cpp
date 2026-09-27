@@ -119,7 +119,7 @@
 												 high_dense_country, 
 												 high_dense_country.get_population_density(), 
 												 "people per square kilometer", 
-												 true);
+												 false);
 						
 				}
 				
@@ -143,7 +143,7 @@
 											  lower_dense_country, 
 											  lower_dense_country.get_population_density(), 
 											  "people per square kilometer", 
-											  true);
+											  false);
 					
 				}
 				

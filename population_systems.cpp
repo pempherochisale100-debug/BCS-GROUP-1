@@ -127,6 +127,7 @@
 	void Population_systems::run_main_menu() {
 		int choice;
 		invoke_data_loader ();
+		pointer = &loader;
 		do {
 			display_menu();
 			cout<<"Enter your choice (0-14) \n";
@@ -137,7 +138,7 @@
 				switch(choice){
 					case 1:{
 						//loads csv data
-						pointer = &loader;
+						
 						pointer->display_details();
 						break;
 					}
