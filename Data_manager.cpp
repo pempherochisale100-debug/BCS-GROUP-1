@@ -14,7 +14,7 @@ Load_data::Load_data () : check_loading_status (false) {
 	
 }
 
-// Getter — return the internal vector
+// Getter â€” return the internal vector
 const vector<Country_class>& Load_data::get_countries () const {
 	
  	return country;

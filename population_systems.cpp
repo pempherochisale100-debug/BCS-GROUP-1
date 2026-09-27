@@ -17,6 +17,8 @@
 	#include "extreme_value_countries.h"
 	#include "statistical_measures.h"
 	#include "future_estimation.h"
+	#include "report_generator.h"
+	#include "continent_analysis.h"
 
 	using namespace std;
 	
@@ -31,6 +33,8 @@
 													 comparing (nullptr),
 													 pointer (nullptr),
 													 estimating (nullptr),
+													 analyse_continent (nullptr),
+													 reporting (nullptr),
 													 stats (nullptr) {
 													 	
 													 	
@@ -57,6 +61,10 @@
 		stats = nullptr;
 		delete estimating;
 		estimating = nullptr;
+		delete analyse_continent;
+		analyse_continent = nullptr;
+		delete reporting;
+		reporting = nullptr;
 	}
 	
 	// the following function will rebuild the engines after they have cleaned by the ceaning fucntion
@@ -73,7 +81,8 @@
 		exporting = new Export_high_pop_countries (data);
 		stats = new statistical_measures (data);
 		analysing = new AnalysisEngine (data);
-		
+		reporting = new ReportGenerator (data);
+		analyse_continent = new Continent_analysis (data);		
 	}
 	
 	void Population_systems::invoke_data_loader() {
@@ -117,6 +126,7 @@
 	// the function to run the do while loop of the 
 	void Population_systems::run_main_menu() {
 		int choice;
+		invoke_data_loader ();
 		do {
 			display_menu();
 			cout<<"Enter your choice (0-14) \n";
@@ -174,6 +184,8 @@
 					}
 					case 9:{
 						//analyse by continent
+						analyse_continent->generate_report();
+						pointer->display_details();
 						break;
 					}
 					case 10:{
@@ -200,6 +212,8 @@
 					}
 					case 14:{
 						//generate report 
+						reporting->generate_report();
+						pointer->display_details();
 						break;
 					}
 					case 0:{

@@ -1,5 +1,6 @@
 #include "Analysis_engine.h"
 #include <iomanip>
+#include "custom_exceptions.h"
 
 AnalysisEngine::AnalysisEngine(vector<Country_class>data){
 	// save the data into our private variable

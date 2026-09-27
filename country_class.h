@@ -70,25 +70,10 @@
 		double get_growth_rate () const;
 		double get_world_percentage () const;
 		
-		
-		
 		void display_details () const override;
-		
-			
-			
-			
-			
-		
-		
-		
 		
 		
 	};
-	
-	
-	
-	
-	
 	
 	
 #endif
