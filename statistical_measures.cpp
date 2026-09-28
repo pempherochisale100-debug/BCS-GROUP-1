@@ -11,6 +11,7 @@
 #include <iostream>
 #include <limits>
 #include <iomanip>
+#include<cmath>
 
 using namespace std;
 
@@ -187,7 +188,7 @@ void statistical_measures ::run_median_menu(){
 				//display_median_menu ();
 				
 		   	cout << "====================================================================\n";
-	   		cout << "                               MEAN MEASURES                         \n";
+	   		cout << "                               MEDIAN MEASURES                         \n";
 	   		cout << "====================================================================\n";
 	   		
 	   			cout << "1. median for 2010 population \n ";
@@ -552,7 +553,7 @@ double statistical_measures::density_median(){
 	   }
 	   
 	   
-	   double statistical_measures::density_max() {
+	  double statistical_measures::density_max() {
 	   	
 	   	if (countries.empty ()) {
 	   		throw Invalid_data_entered ("no data is available in this object");
@@ -576,7 +577,7 @@ double statistical_measures::density_median(){
 	   	return max_density.get_population_density();
 	   	
 	   }
-	   double statistical_measures::density_min () {
+	  double statistical_measures::density_min () {
 	   	
 	   		if (countries.empty ()) {
 	   		throw Invalid_data_entered ("no data is available in this object");
@@ -603,7 +604,209 @@ double statistical_measures::density_median(){
 	   }
 	   
 	   
+	long long statistical_measures:: standard_deviation_population_2023()const{
 		
+		if(countries.empty()){   //validation if theres no data
+		cerr<<"ERROR "<<endl;
+		return 0;
+	}
+        	long long sum=0;
+	
+	for (size_t i=0;i<countries.size ();i++){ // loops through all the countries 
+		
+		sum=sum+countries[i].get_population_2023(); // gets the population for all countries in 2023 and adds
+
+	}
+		long long mean=sum/countries.size();
+		
+		
+		
+		long long sq_sum=0;
+		
+		for (size_t i=0;i<countries.size();i++){
+			
+			double diff=countries[i].get_population_2023() - mean;
+			
+			sq_sum+=diff*diff;
+		}
+		
+		
+	        return sqrt(sq_sum/countries.size());	
+		
+}
+
+
+double statistical_measures::standard_deviation_density()const{
+	
+	   
+		if(countries.empty()){   //validation if theres no data
+		cerr<<"ERROR "<<endl;
+		return 0;
+}
+	double sum=0;
+	
+	for(size_t i=0;i<countries.size();i++){ // loops through all countries
+		
+		sum=sum+countries[i].get_population_density(); // gets density of all countries  and adds 
+	}
+	double mean=sum/countries.size();
+	
+	 
+	
+			double sq_sum=0.0;
+		
+		for (size_t i=0;i<countries.size();i++){
+			
+			double dens_diff=countries[i].get_population_density()-mean;
+			
+			sq_sum+=dens_diff*dens_diff;
+		}
+		
+		
+	        return sqrt(sq_sum/countries.size());	
+		
+}
+	
+	
+	
+	double statistical_measures::standard_deviation_growth_rate()const{
+	
+	double sum=0.0;
+	
+	for(size_t i=0;i<countries.size();i++){ // loops through all countries 
+		
+		sum=sum+countries[i].get_growth_rate(); // get growth rate and adds
+	
+	}
+		double mean=sum/countries.size();
+		
+		
+		
+			double sq_sum=0.0;
+		
+		for (size_t i=0;i<countries.size();i++){
+			
+			double diff=countries[i].get_growth_rate()- mean;
+			
+			sq_sum+=diff * diff;
+		}
+		
+		
+	        return sqrt(sq_sum/countries.size());
+		
+}
+	
+
+		
+		
+		
+		
+		
+	// finding standard deviation
+		
+		void  statistical_measures:: display_standard_deviation_menu(){
+			cout << "====================================================================\n";
+	   		cout << "                  STANDARD DEVIATION                                \n";
+	   		cout << "====================================================================\n";
+			cout<<"1.  standard deviation for 2023 population \n";
+			cout<<"2.  standard deviation for population density \n";
+			cout<<"3.  standard deviation for  growth rate\n";
+			cout<<"0.   EXIT \n ";
+			
+			
+	}
+	void statistical_measures::run_standard_deviation_menu(){
+			int choice=-1;
+			
+			
+			do {
+				// calling the function which has our display menu \
+				
+				display_standard_deviation_menu();
+				
+			//	display standard_deviation();
+				
+				cout << "Enter a choice (0-3): ";
+					if (!(cin>>choice)) {
+						cin.clear ();
+						cerr << "Choice you entered is invalid \n";
+						cin.ignore(numeric_limits<streamsize>::max(), '\n');
+						cerr<<"invalid input \n";
+						choice = -1;
+						
+						continue;
+					}
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				
+				try {
+					
+					switch (choice) {
+						case 1: {
+							// before finding stanrd meaning of the thinsgs that were dicussed 
+							
+							            
+							
+							cout<<fixed<<setprecision(2);
+							cout<<"-------------------------------------------------------------------------------------------\n";
+							
+							cout<<" THE STANDARD DEVIATION FOR 2010 POPULATION IS : "<<standard_deviation_population_2023()<<endl;
+							
+							cout<<"-------------------------------------------------------------------------------------------\n";
+							
+				
+							
+							break;
+						}
+						
+						case 2: {
+							
+							cout<<fixed<<setprecision(2);
+						cout<<"-------------------------------------------------------------------------------------------\n";
+							
+						cout<<" THE STANDARD DEVIATION FOR DENSITY POPULATION IS : "<<standard_deviation_density()  <<endl;
+						
+						cout<<"-------------------------------------------------------------------------------------------\n";
+							
+							break;
+						}
+						case 3 :{
+							cout<<fixed<<setprecision(2);
+							
+						cout<<"-------------------------------------------------------------------------------------------\n";
+							
+						cout<<" THE STANDARD DEVIATION FOR GROWTH RATE  IS : "<<standard_deviation_growth_rate() <<endl;
+						
+						cout<<"-------------------------------------------------------------------------------------------\n";
+							                                                                                          
+						}
+						case 0: {
+							cout << "Press enter to exit the program...\n";
+							break;
+						}
+						
+						
+						default : {
+							throw Invalid_data_entered ("The choice should be between 0 and 3");
+							break;
+						}
+						
+					}
+					
+				}
+				catch (const exception& e) {
+					cout << "ERROR: " << e.what () << endl;
+					
+				}
+				
+				if (choice != 0) {
+					cout <<" Press enter to continue \n";
+					cin.get();
+				}
+				
+			}
+			while (choice != 0);
+		}
+
 		
 		
 		// finding range 
@@ -614,7 +817,9 @@ double statistical_measures::density_median(){
 	   		cout << "====================================================================\n";
 	   		
 	   			cout << "1. Population for 1970 \n";
+	   			
 	   			cout << "2. Land area \n";
+	   			
 	   			cout << "0. Exit the program \n";
 	   			
 	   }
@@ -674,6 +879,7 @@ double statistical_measures::density_median(){
 				}
 				catch (const exception& e) {
 					cout << "ERROR: " << e.what () << endl;
+				
 				}
 				
 				if (choice != 0) {
@@ -695,7 +901,7 @@ double statistical_measures::density_median(){
 		double statistical_measures::land_area_range(){
 			
 			
-			return land_area_max()-land_area_min();
+			return land_area_max() - land_area_min();
 		}
 		
 		
@@ -712,23 +918,25 @@ double statistical_measures::density_median(){
 				
 	cout<<"------------------------------------------------------------------------------------------------------\n";
 	
-	cout<<"---------------------------------STATISTICAL MEASURES  ------------------------------------------\n";
+	cout<<"---------------------------------STATISTICAL MEASURES  ------------------------------------------------\n";
 	
 	cout<<"-------------------------------------------------------------------------------------------------------\n";
 	
-	//cout<<"\n";
 	
-	cout<<"1. Mean \n";
 	
-	cout<<"2. Median \n";
+	cout<<"1. Mean \n"<<endl;
 	
-	cout<<"3. range \n";
+	cout<<"2. Median \n"<<endl;
 	
-	cout<<"4. maximum \n";
+	cout<<"3. range \n"<<endl;
 	
-	cout<<"5. minimum \n ";
+	cout<<"4. maximum \n"<<endl;
 	
-	cout<<"6. standard deviation \n";
+	cout<<"5. minimum \n"<<endl;
+	
+	cout<<"6.standard deviation \n"<<endl;
+	
+	cout<<"7. Exit \n"<<endl;
 					
 
 				
@@ -781,6 +989,8 @@ double statistical_measures::density_median(){
 							break;
 						}
 						case 6:{
+						//	display_standard_deviation_menu();
+							run_standard_deviation_menu();
 							
 							break;
 						}
