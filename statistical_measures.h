@@ -93,6 +93,13 @@ class statistical_measures: public Base_class {
 	   void display_range();
 	   void run_range_menu();
 	   
+	   // finding standard deviation
+	   long long standard_deviation_population_2023()const;
+	   double standard_deviation_density() const ;
+	   double standard_deviation_growth_rate() const;
+	   void display_standard_deviation_menu();
+	   void run_standard_deviation_menu();
+	   
 	    
 	    
 	    
