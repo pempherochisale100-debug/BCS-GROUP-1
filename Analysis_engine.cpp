@@ -131,9 +131,9 @@ void AnalysisEngine::classifyDensity() const{
     }
 
     cout << "\n=========== Global Population Growth (1970 to 2023) ===========\n";
-    cout << "Largest absolute increase   : " << largestAbsName  << " +" << largestAbsChange  << " people\n";
+    cout << "Largest absolute increase   : " << largestAbsName  << " " << largestAbsChange  << " people\n";
     cout << "Smallest absolute increase  : " << smallestAbsName << " "  << smallestAbsChange << " people\n";
-    cout << "Largest percentage increase : " << largestPercName << " +" << fixed << setprecision(2) << largestPercChange << "%\n";
+    cout << "Largest percentage increase : " << largestPercName << " " << fixed << setprecision(2) << largestPercChange << "%\n";
 }
 
 void AnalysisEngine::display_details () const {

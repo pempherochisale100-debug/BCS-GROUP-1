@@ -1,0 +1,27 @@
+====================================================
+        POPULATION ANALYSIS REPORT
+====================================================
+
+--- GENERAL STATISTICS ---
+Total Countries Analysed : 234
+Total World Population   : 8043615390
+Average Population       : 34374425
+Median Population        : 5643895
+Standard Deviation       : 137092531
+
+--- EXTREME VALUES ---
+Most Populated Country   : India
+Least Populated Country  : Vatican City
+Most Populated Continent : Asia
+Least Populated Continent: Oceania
+Highest Population Density: Macau
+Highest Growth Rate      : Syria
+Largest Increase since 1970: India
+
+--- DENSITY GROUPS ---
+Low Density (under 100)  : 118 countries
+Medium Density (100-499) : 88 countries
+High Density (500+)      : 28 countries
+
+====================================================
+Report generated successfully.

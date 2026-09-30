@@ -82,7 +82,8 @@
 		stats = new statistical_measures (data);
 		analysing = new AnalysisEngine (data);
 		reporting = new ReportGenerator (data);
-		analyse_continent = new Continent_analysis (data);		
+		analyse_continent = new Continent_analysis (data);
+		estimating = new future_estimation (data);		
 	}
 	
 	void Population_systems::invoke_data_loader() {
