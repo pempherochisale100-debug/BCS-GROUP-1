@@ -19,7 +19,7 @@ WORLD POPULATION DATA ANALYSIS SYSTEM
 
 9. ===== CLONING THE REPOSITORY FROM GITHUB ======
     1. open your preferred terminal software, i.e git bash, powershell or cmd
-    2. clone the following repo ==> hhtps://github.com/pempherochisale100-debug/BCS-GROUP-1.git
+    2. clone the following repo ==> https://github.com/pempherochisale100-debug/BCS-GROUP-1.git
        git clone [link]
        press enter
    3. Open the project folder and open the main.cpp file using devc++, jetbrains, visual studio, etc
@@ -29,12 +29,12 @@ WORLD POPULATION DATA ANALYSIS SYSTEM
       -- two folders starting with a '.'
       -- and this readme file if you like
    5. Navigate to the Execute tab in Devc++ as it the default working environment to rebuild the whole project
-   6. Press the Rebuild all
+   6. Press the Rebuild all 
    7. -- OR --
    8. Just press f12
    9. then run the by pressing [f11] or in some machines press and hold [fn] + [f11]
   
-       -- Alternatively you can simply run the execuutable --> WPDAS.exe it will the main menu as well
+       -- Alternatively you can simply run the execuutable --> WPDAS.exe it will run the main menu as well
 
    ---------------------------------------- END OF THE DESCRIPTION ---------------------------------------
    -- thank you -----
