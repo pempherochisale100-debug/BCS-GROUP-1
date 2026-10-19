@@ -73,6 +73,27 @@ void Search_engine::search_by_cca3(string& code) const {
     for (size_t i = 0; i < countries.size(); i++) {
         if (toLower(countries[i].get_cca3()) == searchTerm) {
             cout << "Code Found!\n";
+            cout << "------------------------------------------------------------------------------------------------------------\n";
+            			cout << left  << setw (5)<< "CATEOGORY        "     << setw (35)<< "VALUE" << endl;
+           	cout << "------------------------------------------------------------------------------------------------------------\n";
+			            cout << left  << setw (20) << "Rank"                << setw(5) << "=>" << countries [i].get_rank () << endl;
+						cout << left  << setw (20) << "cca3"			    << setw(5) << "=>" << countries [i].get_cca3 () << endl;
+						cout << left  << setw (20) << "Country name" 		<< setw(5) << "=>" << countries [i].get_name () << endl;
+						cout << left  << setw (20) << "Continent"			<< setw(5) << "=>" << countries [i].get_continent () << endl;
+						cout << left  << setw (20) << "2023 population" 	<< setw(5) << "=>" << countries [i].get_population_2023 () << endl;
+						cout << left  << setw (20) << "2022 population" 	<< setw(5) << "=>" << countries [i].get_population_2022 () << endl;
+						cout << left  << setw (20) << "2020 population" 	<< setw(5) << "=>" << countries [i].get_population_2020 () << endl;
+						cout << left  << setw (20) << "2015 population" 	<< setw(5) << "=>" << countries [i].get_population_2015 () << endl;
+						cout << left  << setw (20) << "2010 population" 	<< setw(5) << "=>" << countries [i].get_population_2010 () << endl;
+						cout << left  << setw (20) << "2000 population" 	<< setw(5) << "=>" << countries [i].get_population_2000 () << endl;
+						cout << left  << setw (20) << "1990 population" 	<< setw(5) << "=>" << countries [i].get_population_1990 () << endl;
+						cout << left  << setw (20) << "1980 population" 	<< setw(5) << "=>" << countries [i].get_population_1980 () << endl;
+						cout << left  << setw (20) << "1970 population"  	<< setw(5) << "=>" << countries [i].get_population_1970 () << endl;
+						cout << left  << setw (20) << "Population Density"  << setw(5) << "=>" << countries [i].get_population_density () << " Pple/sqr_km" << endl;
+						cout << left  << setw (20) << "Land area" 			<< setw(5) << "=>" << countries [i].get_land_area () << " sqr_km" << endl;
+						cout << left  << setw (20) << "world percentage" 	<< setw(5) << "=>" << countries [i].get_world_percentage () << " %" << endl;
+						cout << left  << setw (20) << "Growth Rate    "     << setw(5) << "=>" << countries [i].get_growth_rate () << " %" << endl;
+			cout << "------------------------------------------------------------------------------------------------------------\n";
              countries[i].display_details();
             found = true;
             break;

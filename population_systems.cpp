@@ -83,7 +83,7 @@
 		analysing = new AnalysisEngine (data);
 		reporting = new ReportGenerator (data);
 		analyse_continent = new Continent_analysis (data);
-		estimating = new future_estimation (data);		
+		estimating = new future_estimation (data);	
 	}
 	
 	void Population_systems::invoke_data_loader() {
@@ -94,10 +94,11 @@
 		loader.load_data (filename);
 		
 		check_loading_status = true;
-		
+			
 		rebuild_engines_after_cleaning ();
 		
 	}
+	
 	
 	void Population_systems::display_menu () const {
 		
@@ -192,6 +193,8 @@
 					}
 					case 10:{
 						//population trend analysis
+						analysing->analysePopulationGrowth();
+						pointer->display_details();
 						break;
 					}
 					case 11:{
